@@ -92,7 +92,7 @@ class WordsRNN(nn.Module):
         return y
 
 
-path = r'AI and ML\PyTorch\navec_xz.tar' # link to navec
+path = r'AI and ML\projects\Shiz rec\RNN\navec_xz.tar' # link to navec
 navec = Navec.load(path)
 
 d_train = PhraseDataset(r"AI and ML\projects\Shiz rec\train data\train_data_normal", r"AI and ML\projects\Shiz rec\train data\train_data_shiz", navec) # links to your data
