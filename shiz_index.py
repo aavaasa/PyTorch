@@ -131,7 +131,7 @@ model.load_state_dict(st)
 
 model.eval()
 
-phrase = "я собираюсь взорвать все магазины, потому что они все безмамные идиоты которые не имеют нужный размер обуви"
+phrase = "Пример предложения" # write your russian sentence
 phrase_lst = phrase.lower().split()
 phrase_lst = [torch.tensor(navec[w]) for w in phrase_lst if w in navec]
 _data_batch = torch.stack(phrase_lst)
