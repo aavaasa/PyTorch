@@ -149,8 +149,6 @@ d_train = SegmentDataset(r"AI and ML\projects\Shiz rec\U-NET\dataset_seg", trans
 train_data = data.DataLoader(d_train, batch_size=2, shuffle=True)
 
 model = UNetModel()
-# p = model(a.unsqueeze(0))
-# print(model)
 
 optimizer = optim.RMSprop(params=model.parameters(), lr=0.001)
 loss_1 = nn.BCEWithLogitsLoss()
@@ -179,8 +177,8 @@ for _e in range(epochs):
 st = model.state_dict()
 torch.save(st, 'model_unet_seg.tar')
 
-# st = torch.load('model_unet_seg.tar', weights_only=False)
-# model.load_state_dict(st)
+ml = torch.load('model_unet_seg.tar', weights_only=False)
+model.load_state_dict(ml)
 
 img = Image.open(r"AI and ML\projects\Shiz rec\U-NET\images\img_1_car.jpg").convert('RGB') # link to your image
 img = tr_img(img).unsqueeze(0)
